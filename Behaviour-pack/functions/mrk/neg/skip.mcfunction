@@ -1,0 +1,1 @@
+event entity @s custom:instant_despawn
