@@ -1,0 +1,38 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "custom:cinematic",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/empty",
+				"cinematic": "textures/entity/cinematic_marker",
+				"focus_point": "textures/entity/focus_point",
+				"focus_entity": "textures/entity/dynamic_focus_point",
+				"skip": "textures/entity/skip_marker",
+				"increase": "textures/entity/increase_marker",
+				"decrease": "textures/entity/decrease_marker",
+				"camera": "textures/entity/camera_marker",
+				"spot": "textures/entity/empty",
+				"dummy": "textures/entity/empty"
+			},
+			"geometry": {
+				"default": "geometry.cinematic"
+			},
+			"render_controllers": [
+				"controller.render.cinematic"
+			],
+			"hide_armor": true,
+			"animations": {
+				"flying": "animation.actor.billboard"
+			},
+			"scripts": {
+				"animate": [
+					"flying"
+				]
+			}
+		}
+	}
+}

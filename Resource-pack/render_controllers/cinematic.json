@@ -1,0 +1,32 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.cinematic": {
+			"geometry": "Geometry.default",
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"arrays": {
+				"textures": {
+					"Array.flora": [
+						"Texture.default",
+						"Texture.cinematic",
+						"Texture.focus_point",
+						"Texture.focus_entity",
+						"Texture.skip",
+						"Texture.increase",
+						"Texture.decrease",
+						"Texture.camera",
+						"Texture.spot",
+						"Texture.dummy"
+					]
+				}
+			},
+			"textures": [
+				"Array.flora[query.variant]"
+			]
+		}
+	}
+}
