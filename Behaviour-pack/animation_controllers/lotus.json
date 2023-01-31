@@ -1,0 +1,143 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.marker_removal": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "cinematic": "query.variant == 1"
+                        },
+                        {
+                            "focus": "query.variant == 2"
+                        },
+                        {
+                            "dynamic": "query.variant == 3"
+                        },
+                        {
+                            "skip": "query.variant == 4"
+                        },
+                        {
+                            "increase": "query.variant == 5"
+                        },
+                        {
+                            "decrease": "query.variant == 6"
+                        }
+                    ]
+                },
+                "cinematic": {
+                    "transitions": [
+                        {
+                            "default": "query.variant != 1"
+                        },
+                        {
+                            "cinematic_remove": "query.mark_variant == 1"
+                        }
+                    ]
+                },
+                "focus": {
+                    "transitions": [
+                        {
+                            "default": "query.variant != 2"
+                        },
+                        {
+                            "focus_remove": "query.mark_variant == 1"
+                        }
+                    ]
+                },
+                "dynamic": {
+                    "transitions": [
+                        {
+                            "default": "query.variant != 3"
+                        },
+                        {
+                            "dynamic_remove": "query.mark_variant == 1"
+                        }
+                    ]
+                },
+                "skip": {
+                    "transitions": [
+                        {
+                            "default": "query.variant != 4"
+                        },
+                        {
+                            "skip_remove": "query.mark_variant == 1"
+                        }
+                    ]
+                },
+                "increase": {
+                    "transitions": [
+                        {
+                            "default": "query.variant != 5"
+                        },
+                        {
+                            "increase_remove": "query.mark_variant == 1"
+                        }
+                    ]
+                },
+                "decrease": {
+                    "transitions": [
+                        {
+                            "default": "query.variant != 6"
+                        },
+                        {
+                            "decrease_remove": "query.mark_variant == 1"
+                        }
+                    ]
+                },
+                "cinematic_remove": {
+                    "on_entry": [
+                        "/execute as @s run function mrk/neg/cinematic"
+                    ]
+                },
+                "focus_remove": {
+                    "on_entry": [
+                        "/function mrk/neg/focus_point"
+                    ]
+                },
+                "dynamic_remove": {
+                    "on_entry": [
+                        "/function mrk/neg/focus_dynamic"
+                    ]
+                },
+                "skip_remove": {
+                    "on_entry": [
+                        "/function mrk/neg/skip"
+                    ]
+                },
+                "increase_remove": {
+                    "on_entry": [
+                        "/function mrk/neg/increase"
+                    ]
+                },
+                "decrease_remove": {
+                    "on_entry": [
+                        "/function mrk/neg/decrease"
+                    ]
+                }
+            }
+        },
+        "controller.animation.marker_entry": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "entry": "query.is_alive"
+                        }
+                    ]
+                },
+                "entry": {
+                    "on_entry": [
+                        "/function update_cinematic",
+                        "/function update_focus",
+                        "/function hlp/assign",
+                        "/execute if entity @s[family=focus_entity] run function hlp/fetch_entity",
+                        "/execute if entity @s[family=u_marker] run scoreboard players add @s cinematic 0"
+                    ]
+                }
+            }
+        }
+    }
+}

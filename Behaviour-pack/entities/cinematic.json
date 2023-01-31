@@ -1,0 +1,466 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "custom:cinematic",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"marker_removal": "controller.animation.marker_removal",
+				"marker_entry": "controller.animation.marker_entry"
+			},
+			"scripts": {
+				"animate": [
+					"marker_removal",
+					"marker_entry"
+				]
+			}
+		},
+		"component_groups": {
+			"custom:instant_despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"custom:cinematic": {
+				"minecraft:type_family": {
+					"family": [
+						"flora",
+						"cinematic",
+						"marker",
+						"entry"
+					]
+				},
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:interact": {
+					"interactions": {
+						"on_interact": {
+							"event": "custom:interact",
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_tag",
+										"operator": "equals",
+										"subject": "player",
+										"value": "cinematic"
+									},
+									{
+										"test": "has_tag",
+										"operator": "not",
+										"subject": "player",
+										"has_tag": "cinematicA"
+									}
+								]
+							}
+						}
+					}
+				}
+			},
+			"custom:focus": {
+				"minecraft:type_family": {
+					"family": [
+						"flora",
+						"focus_point",
+						"marker",
+						"entry",
+						"focus"
+					]
+				},
+				"minecraft:variant": {
+					"value": 2
+				},
+				"minecraft:collision_box": {
+					"height": 0.5,
+					"width": 0.76
+				},
+				"minecraft:interact": {
+					"interactions": {
+						"on_interact": {
+							"event": "custom:interact",
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_tag",
+										"operator": "equals",
+										"subject": "player",
+										"value": "cinematic"
+									},
+									{
+										"test": "has_tag",
+										"operator": "not",
+										"subject": "player",
+										"has_tag": "cinematicA"
+									}
+								]
+							}
+						}
+					}
+				}
+			},
+			"custom:dynamic": {
+				"minecraft:type_family": {
+					"family": [
+						"flora",
+						"focus_entity",
+						"marker",
+						"entry",
+						"focus"
+					]
+				},
+				"minecraft:collision_box": {
+					"height": 0.5,
+					"width": 0.76
+				},
+				"minecraft:variant": {
+					"value": 3
+				},
+				"minecraft:interact": {
+					"interactions": {
+						"on_interact": {
+							"event": "custom:interact",
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_tag",
+										"operator": "equals",
+										"subject": "player",
+										"value": "cinematic"
+									},
+									{
+										"test": "has_tag",
+										"operator": "not",
+										"subject": "player",
+										"has_tag": "cinematicA"
+									}
+								]
+							}
+						}
+					}
+				}
+			},
+			"custom:skip": {
+				"minecraft:type_family": {
+					"family": [
+						"flora",
+						"skip",
+						"marker",
+						"entry",
+						"u_marker"
+					]
+				},
+				"minecraft:variant": {
+					"value": 4
+				},
+				"minecraft:interact": {
+					"interactions": {
+						"on_interact": {
+							"event": "custom:interact",
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_tag",
+										"operator": "equals",
+										"subject": "player",
+										"value": "cinematic"
+									},
+									{
+										"test": "has_tag",
+										"operator": "not",
+										"subject": "player",
+										"has_tag": "cinematicA"
+									}
+								]
+							}
+						}
+					}
+				}
+			},
+			"custom:increase": {
+				"minecraft:type_family": {
+					"family": [
+						"flora",
+						"increase",
+						"marker",
+						"entry",
+						"u_marker"
+					]
+				},
+				"minecraft:variant": {
+					"value": 5
+				},
+				"minecraft:interact": {
+					"interactions": {
+						"on_interact": {
+							"event": "custom:interact",
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_tag",
+										"operator": "equals",
+										"subject": "player",
+										"value": "cinematic"
+									},
+									{
+										"test": "has_tag",
+										"operator": "not",
+										"subject": "player",
+										"has_tag": "cinematicA"
+									}
+								]
+							}
+						}
+					}
+				}
+			},
+			"custom:decrease": {
+				"minecraft:type_family": {
+					"family": [
+						"flora",
+						"decrease",
+						"marker",
+						"entry",
+						"u_marker"
+					]
+				},
+				"minecraft:variant": {
+					"value": 6
+				},
+				"minecraft:interact": {
+					"interactions": {
+						"on_interact": {
+							"event": "custom:interact",
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_tag",
+										"operator": "equals",
+										"subject": "player",
+										"value": "cinematic"
+									},
+									{
+										"test": "has_tag",
+										"operator": "not",
+										"subject": "player",
+										"has_tag": "cinematicA"
+									}
+								]
+							}
+						}
+					}
+				}
+			},
+			"custom:camera": {
+				"minecraft:type_family": {
+					"family": [
+						"flora",
+						"fcamera",
+						"entry"
+					]
+				},
+				"minecraft:variant": {
+					"value": 7
+				}
+			},
+			"custom:spot": {
+				"minecraft:type_family": {
+					"family": [
+						"flora",
+						"spot",
+						"entry"
+					]
+				},
+				"minecraft:variant": {
+					"value": 8
+				},
+				"minecraft:nameable": {
+					"allow_name_tag_renaming": false,
+					"always_show": false
+				},
+				"minecraft:collision_box": {
+					"height": 0.01,
+					"width": 0.01
+				}
+			},
+			"custom:dummy_1": {
+				"minecraft:type_family": {
+					"family": [
+						"flora",
+						"original",
+						"entry",
+						"original1"
+					]
+				},
+				"minecraft:variant": {
+					"value": 9
+				},
+				"minecraft:nameable": {
+					"allow_name_tag_renaming": false,
+					"always_show": false
+				},
+				"minecraft:collision_box": {
+					"height": 0.01,
+					"width": 0.01
+				}
+			},
+			"custom:dummy_2": {
+				"minecraft:type_family": {
+					"family": [
+						"flora",
+						"original",
+						"entry",
+						"original2"
+					]
+				},
+				"minecraft:variant": {
+					"value": 9
+				},
+				"minecraft:nameable": {
+					"allow_name_tag_renaming": false,
+					"always_show": false
+				},
+				"minecraft:collision_box": {
+					"height": 0.01,
+					"width": 0.01
+				}
+			},
+			"custom:interaction": {
+				"minecraft:mark_variant": {
+					"value": 1
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 1
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:type_family": {
+				"family": [
+					"flora",
+					"empty",
+					"marker"
+				]
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:nameable": {
+				"allow_name_tag_renaming": false,
+				"always_show": true,
+				"name_actions": [
+					{
+						"name_filter": "flora",
+						"on_named": {
+							"event": "custom:camera",
+							"target": "self"
+						}
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"height": 0.76,
+				"width": 0.76
+			},
+			"minecraft:mark_variant": {
+				"value": 0
+			}
+		},
+		"events": {
+			"custom:instant_despawn": {
+				"add": {
+					"component_groups": [
+						"custom:instant_despawn"
+					]
+				}
+			},
+			"custom:cinematic": {
+				"add": {
+					"component_groups": [
+						"custom:cinematic"
+					]
+				}
+			},
+			"custom:focus": {
+				"add": {
+					"component_groups": [
+						"custom:focus"
+					]
+				}
+			},
+			"custom:dynamic": {
+				"add": {
+					"component_groups": [
+						"custom:dynamic"
+					]
+				}
+			},
+			"custom:skip": {
+				"add": {
+					"component_groups": [
+						"custom:skip"
+					]
+				}
+			},
+			"custom:increase": {
+				"add": {
+					"component_groups": [
+						"custom:increase"
+					]
+				}
+			},
+			"custom:decrease": {
+				"add": {
+					"component_groups": [
+						"custom:decrease"
+					]
+				}
+			},
+			"custom:interact": {
+				"add": {
+					"component_groups": [
+						"custom:interaction"
+					]
+				}
+			},
+			"custom:camera": {
+				"add": {
+					"component_groups": [
+						"custom:camera"
+					]
+				}
+			},
+			"custom:spot": {
+				"add": {
+					"component_groups": [
+						"custom:spot"
+					]
+				}
+			},
+			"custom:dummy_1": {
+				"add": {
+					"component_groups": [
+						"custom:dummy_1"
+					]
+				}
+			},
+			"custom:dummy_2": {
+				"add": {
+					"component_groups": [
+						"custom:dummy_2"
+					]
+				}
+			}
+		}
+	}
+}

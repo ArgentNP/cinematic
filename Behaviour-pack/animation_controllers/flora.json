@@ -1,0 +1,260 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.item_usage": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "remove_markers": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:remove')"
+                        },
+                        {
+                            "create_cinematic": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:marker')"
+                        },
+                        {
+                            "create_focus": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:focus_point')"
+                        },
+                        {
+                            "increase_speed": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:speed_increase')"
+                        },
+                        {
+                            "decrease_speed": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:speed_decrease')"
+                        },
+                        {
+                            "default_speed": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:default_speed')"
+                        },
+                        {
+                            "create_dynamic": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:dynamic_focus')"
+                        },
+                        {
+                            "create_increase": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:increase')"
+                        },
+                        {
+                            "create_decrease": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:decrease')"
+                        },
+                        {
+                            "create_skip": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:skip_marker')"
+                        },
+                        {
+                            "go_back": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:goback')"
+                        },
+                        {
+                            "markers": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:new_marker')"
+                        },
+                        {
+                            "resume": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:resume')"
+                        },
+                        {
+                            "pause": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:pause')"
+                        },
+                        {
+                            "skip": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:skip')"
+                        },
+                        {
+                            "end": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:end')"
+                        },
+                        {
+                            "exit": "q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:exit')"
+                        }
+                    ]
+                },
+                "remove_markers": {
+                    "on_entry": [
+                        "/function tst/check_remove"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(!q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:marker'))||(!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:marker'))"
+                        }
+                    ]
+                },
+                "create_cinematic": {
+                    "on_entry": [
+                        "/execute as @s run function mrk/pos/cinematic"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(!q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:marker'))||(!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:marker'))"
+                        }
+                    ]
+                },
+                "create_focus": {
+                    "on_entry": [
+                        "/execute as @s run function mrk/pos/focus"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(!q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:focus_point'))||(!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:focus_point'))"
+                        }
+                    ]
+                },
+                "create_dynamic": {
+                    "on_entry": [
+                        "/execute as @s run function mrk/pos/dynamic"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(!q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:dynamic_focus'))||(!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:dynamic_focus'))"
+                        }
+                    ]
+                },
+                "create_increase": {
+                    "on_entry": [
+                        "/execute as @s run function mrk/pos/increase"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(!q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:increase'))||(!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:increase'))"
+                        }
+                    ]
+                },
+                "create_decrease": {
+                    "on_entry": [
+                        "/execute as @s run function mrk/pos/decrease"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(!q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:decrease'))||(!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:decrease'))"
+                        }
+                    ]
+                },
+                "create_skip": {
+                    "on_entry": [
+                        "/execute as @s run function mrk/pos/skip"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(!q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:skip_marker'))||(!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:skip_marker'))"
+                        }
+                    ]
+                },
+                "increase_speed": {
+                    "on_entry": [
+                        "/execute as @s run function increase_speed"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(!q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:increase_speed'))||(!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:increase_speed'))"
+                        }
+                    ]
+                },
+                "decrease_speed": {
+                    "on_entry": [
+                        "/execute as @s run function decrease_speed"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(!q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:decrease_speed'))||(!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:decrease_speed'))"
+                        }
+                    ]
+                },
+                "default_speed": {
+                    "on_entry": [
+                        "/execute as @s run function default_speed"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(!q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:default_speed'))||(!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:default_speed'))"
+                        }
+                    ]
+                },
+                "go_back": {
+                    "on_entry": [
+                        "/execute as @s run function inv/main"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:goback')"
+                        }
+                    ]
+                },
+                "markers": {
+                    "on_entry": [
+                        "/execute as @s run function inv/marker"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:new_marker')"
+                        }
+                    ]
+                },
+                "resume": {
+                    "on_entry": [
+                        "/execute as @s run function tst/check_resume"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(!q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:resume'))||(!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:resume'))"
+                        }
+                    ]
+                },
+                "pause": {
+                    "on_entry": [
+                        "/execute as @s run function tst/check_pause"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(!q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:pause'))||(!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:pause'))"
+                        }
+                    ]
+                },
+                "skip": {
+                    "on_entry": [
+                        "/execute as @s run function skip"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(!q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:skip'))||(!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:skip'))"
+                        }
+                    ]
+                },
+                "end": {
+                    "on_entry": [
+                        "/execute as @s run function hlp/end_force"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(!q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:end'))||(!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:end'))"
+                        }
+                    ]
+                },
+                "exit": {
+                    "on_entry": [
+                        "/execute as @s run function tool_exit"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "(!q.is_using_item&&query.is_item_name_any('slot.weapon.mainhand',0,'custom:exit'))||(!q.is_using_item&&!query.is_item_name_any('slot.weapon.mainhand',0,'custom:exit'))"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.inventory_entry": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "is_empty": "q.is_item_name_any('slot.hotbar', 0, '')&&q.is_item_name_any('slot.hotbar', 1, '')&&q.is_item_name_any('slot.hotbar', 2, '')&&q.is_item_name_any('slot.hotbar', 3, '')&&q.is_item_name_any('slot.hotbar', 4, '')&&q.is_item_name_any('slot.hotbar', 5, '')&&q.is_item_name_any('slot.hotbar', 6, '')&&q.is_item_name_any('slot.hotbar', 7, '')&&q.is_item_name_any('slot.hotbar', 8, '')"
+                        }
+                    ]
+                },
+                "is_empty": {
+                    "on_entry": [
+                        "/tag @s add cinematicA"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!q.is_item_name_any('slot.hotbar', 0, '')||!q.is_item_name_any('slot.hotbar', 1, '')||!q.is_item_name_any('slot.hotbar', 2, '')||!q.is_item_name_any('slot.hotbar', 3, '')||!q.is_item_name_any('slot.hotbar', 4, '')||!q.is_item_name_any('slot.hotbar', 5, '')||!q.is_item_name_any('slot.hotbar', 6, '')||!q.is_item_name_any('slot.hotbar', 7, '')||!q.is_item_name_any('slot.hotbar', 8, '')"
+                        }
+                    ],
+                    "on_exit": [
+                        "/tag @s remove cinematicA"
+                    ]
+                }
+            }
+        }
+    }
+}
