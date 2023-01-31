@@ -1,0 +1,23 @@
+scoreboard objectives add cinematic dummy "scr.entity.score"
+scoreboard objectives add cinematicA dummy "scr.entity.extra"
+scoreboard objectives add cinematicB dummy "scr.entity.dev"
+scoreboard objectives add cinematicC dummy "scr.entity.logs"
+scoreboard players add @a[tag=cinematic] cinematic 0
+scoreboard players add @a[tag=cinematic] cinematicA 0
+scoreboard players set @a[tag=cinematic] cinematicB -2
+scoreboard players set " " cinematicB -1
+scoreboard players add "handler-s" cinematicB 0
+scoreboard players add "handler-o" cinematicB 0
+scoreboard players add "handler-b" cinematicB 0
+scoreboard players add "handler-l" cinematicB 0
+scoreboard players add "handler-i" cinematicB 0
+scoreboard players add "handler-d" cinematicB 0
+scoreboard players add "handler-n" cinematicB 0
+scoreboard players add "handler-w" cinematicB 0
+scoreboard players add "handler-q" cinematicB 0
+scoreboard players add "handler-k" cinematicB 0
+scoreboard players add "handler-a" cinematicB 0
+scoreboard players add "handler-u" cinematicB 0
+scoreboard players add "handler-m" cinematicB 0
+scoreboard players add "handler-g" cinematicB 0
+scoreboard players set "handler-n" cinematicB -1

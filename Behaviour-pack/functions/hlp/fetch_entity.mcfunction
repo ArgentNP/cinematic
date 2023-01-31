@@ -1,0 +1,4 @@
+execute as @s[family=focus_entity] at @s if entity @e[tag=!cinematicA,family=!marker,r=4,tag=!cinematicC,tag=!cinematicB,type=!item] run tag @e[tag=!cinematicA,family=!marker,c=1,tag=!cinematicC,tag=!cinematicB,type=!item] add cinematicB
+execute as @s[family=focus_entity] at @s if entity @e[tag=!cinematicA,family=!marker,r=4,tag=!cinematicC,type=!item] run tag @s[family=focus_entity] add cinematicB
+execute as @s[family=focus_entity] at @s if entity @e[tag=!cinematicA,family=!marker,r=4,tag=!cinematicC,type=!item] run tellraw @a[tag=cinematicC] {"rawtext":[{"text":"§fDynamic focus marker is focusing on §e"},{"selector":"@e[tag=cinematicB,family=!marker]"},{"text":"§f!"}]}
+execute as @s[family=focus_entity] at @s unless entity @e[tag=!cinematicA,family=!marker,r=4,tag=!cinematicC,type=!item] run function err/noentity 
