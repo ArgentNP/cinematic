@@ -1,0 +1,3 @@
+execute if score "handler-l" cinematicB matches 5 run titleraw @s actionbar {"rawtext":[{"text":"§fSpeed is already set to §e"},{"score":{"name":"handler-l","objective":"cinematicB"}}]}
+execute unless score "handler-l" cinematicB matches 5 run titleraw @s actionbar {"rawtext":[{"text":"§fSpeed is set to §edefault"}]}
+execute unless score "handler-l" cinematicB matches 5 run scoreboard players set "handler-l" cinematicB 5

@@ -1,0 +1,3 @@
+execute unless score "handler-l" cinematicB matches ..0 run scoreboard players remove "handler-l" cinematicB 1
+execute unless score "handler-l" cinematicB matches ..0 run titleraw @s actionbar {"rawtext":[{"text":"§fSpeed is set to §e"},{"score":{"name":"handler-l","objective":"cinematicB"}}]}
+execute if score "handler-l" cinematicB matches ..0 run titleraw @s actionbar {"rawtext":[{"text":"§fSpeed is set to §e"},{"score":{"name":"handler-l","objective":"cinematicB"}},{"text":" §7MAX"}]}
